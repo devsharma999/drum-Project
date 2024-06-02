@@ -1,0 +1,109 @@
+# Creating an AWS KMS key. 
+
+1.>Sign in to the AWS Management Console.
+2.>Navigate to the AWS Key Management Service (KMS) console.
+3.>Click on "Create key".
+4.>Choose Key Material Origin.
+5.>Choose Key Type.
+6.>Select Key Spec (if applicable).
+7.>Provide Key De\scription (optional).
+8.>Specify Key Administrator (optional).
+9.>Set Key Usage Permissions.
+10.>Define Key Policy (optional).
+11.>Add Key Tags (optional).
+12.>Review and Create.
+13.>Confirm Creation.
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+# Amazon Cloud Watch....
+
+
+
+1,>Sign in to AWS Management Console.
+2.>Go to CloudWatch service.
+3.>Click on "Metrics".
+4.>Select namespace and metric.
+5.>Create alarm for selected metric.
+6.>Configure threshold and actions.
+7.>Review and create alarm.
+8.>Navigate to "Dashboards".
+9.>Create a new dashboard.
+10.>Add widgets to visualize metrics.
+11.>Configure widgets.
+12.>Save the dashboard.
+13.>Optionally, share the dashboard.
+14.>Explore additional CloudWatch features as needed.
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+# Virtual Private Cloud......
+
+1) Create a VPC
+   - Name the VPC
+   - Select IPv4 CIDR (e.g., 192.168.0.0/16)
+   - Click "Create VPC"
+
+2) Create Subnet
+   - Select VPC
+   - Enter subnet details (e.g., 192.168.1.0/24, 192.168.2.0/24, 192.168.3.0/24, 192.168.4.0/24)
+   - Click "Create Subnet"
+
+3) Create Instance
+   - Configure instance
+   - Edit network settings (select VPC, subnet, enable public IP, create security group for SSH)
+   - Launch instance
+
+4) Instance connection fails
+
+5) Create Internet Gateway
+   - Go to Internet gateway, create and name it
+
+6) Attach Internet Gateway to VPC
+
+7) VPC can access the Internet
+
+8) Instance connection still fails
+
+9) Create Route Table
+   - Edit routes (0.0.0.0/0, select Internet Gateway)
+   - Save changes
+
+10) Instance connection succeeds
+
+11) Route attached to all subnets (not desired)
+
+12) Make Subnet Private
+   - Create route table without Internet Gateway
+   - Attach to private subnet
+
+13) Create Private Instance
+   - Select VPC with private subnet, disable public IP
+   - Add security group for ICMP
+
+14) Private instance connection fails
+
+15) Ping private instance from public instance
+
+16) Private instance lacks Internet access
+
+17) Access Private Instance via Public Instance
+   - Connect to public instance
+   - Copy and set permissions for private key file
+   - SSH into private instance
+
+18) Create NAT Gateway
+   - Name it, select public subnet, allocate Elastic IP, create gateway
+
+19) Attach NAT Gateway to private route
+
+20) Private instance gains Internet access
+
+21) Deny IP Access via Network ACLs
+   - Edit ACL, inbound rules (deny specific IP)
+   - Save changes
+
